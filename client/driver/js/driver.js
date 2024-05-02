@@ -40,7 +40,7 @@ function onLocationFound(e) {
 		truckCoords = truckMarker.getLatLng()
 		truckMarker.setLatLng(truckCoords).addTo(map)
 		//emit coords with socket
-		socket.emit('location', truckCoords)
+		emitCoords()
 	})
 }
 
@@ -60,6 +60,4 @@ function trackLocation() {
 map.on('locationfound', onLocationFound)
 map.on('locationerror', onLocationError)
 
-trackLocation() //delete when the interval is activated
-//Update location every 2 seconds
-//setInterval(trackLocation, 2000)
+trackLocation()
