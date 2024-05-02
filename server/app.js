@@ -12,8 +12,8 @@ const io = new socketServer(server)
 app.use(logger('dev'))
 
 //Routes
-app.use('/', express.static('../client/user'))
-app.use('/driver', express.static('../client/driver'))
+app.use('/', express.static('./client/user'))
+app.use('/driver', express.static('./client/driver'))
 
 //Sockets
 io.on('connection', (socket) => {
